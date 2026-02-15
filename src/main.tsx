@@ -8,7 +8,7 @@ import "./styles/global.scss";
 const params = new URLSearchParams(window.location.search);
 const redirect = params.get("redirect");
 if (redirect) {
-  const basePath = "/ian-greenough-developer-portfolio";
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   const cleanPath = redirect.startsWith(basePath)
     ? redirect.slice(basePath.length)
     : redirect;
