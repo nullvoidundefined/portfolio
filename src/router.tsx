@@ -37,7 +37,7 @@ const routeTree = rootRoute.addChildren([indexRoute, jobDetailRoute]);
 
 const router = createRouter({
   routeTree,
-  basepath: "/ian-greenough-developer-portfolio",
+  basepath: import.meta.env.BASE_URL,
 });
 
 declare module "@tanstack/react-router" {
