@@ -6,7 +6,9 @@ import "./styles/global.scss";
 
 // Handle GitHub Pages 404 redirect for client-side routing
 const params = new URLSearchParams(window.location.search);
+
 const redirect = params.get("redirect");
+
 if (redirect) {
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   const cleanPath = redirect.startsWith(basePath)

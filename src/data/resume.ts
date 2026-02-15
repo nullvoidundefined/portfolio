@@ -1,35 +1,35 @@
 export interface Job {
-  id: string;
   company: string;
-  title: string;
-  location: string;
-  startDate: string;
   endDate: string;
   highlights: string[];
+  id: string;
+  location: string;
+  startDate: string;
   technologies: string[];
+  title: string;
 }
 
 export interface Education {
-  institution: string;
   degree: string;
-  location: string;
-  graduationDate: string;
   details?: string[];
+  graduationDate: string;
+  institution: string;
+  location: string;
 }
 
 export interface ResumeData {
-  name: string;
-  title: string;
-  email: string;
-  phone: string;
-  location: string;
-  linkedin: string;
-  github: string;
-  summary: string;
-  selectedImpact: string[];
-  jobs: Job[];
   education: Education[];
+  email: string;
+  github: string;
+  jobs: Job[];
+  linkedin: string;
+  location: string;
+  name: string;
+  phone: string;
+  selectedImpact: string[];
   skills: Record<string, string[]>;
+  summary: string;
+  title: string;
 }
 
 const resume: ResumeData = {
