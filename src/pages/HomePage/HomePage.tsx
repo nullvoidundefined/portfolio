@@ -26,11 +26,21 @@ export default function HomePage() {
         <ContactInfo items={contactItems} />
       </div>
 
-      <Section title="Summary">
+      <Section title="Professional Summary">
         <p className={styles.summary}>{resume.summary}</p>
       </Section>
 
-      <Section title="Experience">
+      <Section title="Selected Impact">
+        <ul className={styles.impactList}>
+          {resume.selectedImpact.map((item) => (
+            <li key={item} className={styles.impactItem}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section title="Professional Experience">
         {resume.jobs.map((job) => (
           <JobTile key={job.id} job={job} />
         ))}
@@ -42,29 +52,33 @@ export default function HomePage() {
         ))}
       </Section>
 
-      <Section title="Education">
-        {resume.education.map((edu) => (
-          <div key={edu.institution} className={styles.education}>
-            <div className={styles.eduHeader}>
-              <div>
-                <h3 className={styles.degree}>{edu.degree}</h3>
-                <span className={styles.institution}>{edu.institution}</span>
+      {resume.education.length > 0 && (
+        <Section title="Education">
+          {resume.education.map((edu) => (
+            <div key={edu.institution} className={styles.education}>
+              <div className={styles.eduHeader}>
+                <div>
+                  <h3 className={styles.degree}>{edu.degree}</h3>
+                  <span className={styles.institution}>{edu.institution}</span>
+                </div>
+                <div className={styles.eduMeta}>
+                  <span className={styles.gradDate}>
+                    {edu.graduationDate}
+                  </span>
+                  <span className={styles.eduLocation}>{edu.location}</span>
+                </div>
               </div>
-              <div className={styles.eduMeta}>
-                <span className={styles.gradDate}>{edu.graduationDate}</span>
-                <span className={styles.eduLocation}>{edu.location}</span>
-              </div>
+              {edu.details && (
+                <ul className={styles.eduDetails}>
+                  {edu.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {edu.details && (
-              <ul className={styles.eduDetails}>
-                {edu.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </Section>
+          ))}
+        </Section>
+      )}
     </main>
   );
 }
