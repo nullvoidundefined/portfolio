@@ -1,0 +1,103 @@
+@use "../../styles/mixins" as *;
+
+.page {
+  @include container;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.hero {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.name {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+
+  @include responsive(mobile) {
+    font-size: 1.75rem;
+  }
+}
+
+.title {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+}
+
+.summary {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.education {
+  @include card;
+  padding: var(--space-lg);
+}
+
+.eduHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+.degree {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.institution {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.eduMeta {
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include responsive(mobile) {
+    text-align: left;
+    flex-direction: row;
+    gap: var(--space-sm);
+  }
+}
+
+.gradDate {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.eduLocation {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.eduDetails {
+  margin-top: var(--space-sm);
+  padding-left: var(--space-lg);
+  list-style: disc;
+
+  li {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+}

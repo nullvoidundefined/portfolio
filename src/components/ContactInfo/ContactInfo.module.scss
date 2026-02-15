@@ -1,0 +1,33 @@
+@use "../../styles/mixins" as *;
+
+.contactInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  a {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}

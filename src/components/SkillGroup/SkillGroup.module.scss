@@ -1,0 +1,19 @@
+.group {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+}
+
+.category {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
