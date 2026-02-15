@@ -35,7 +35,10 @@ const jobDetailRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, jobDetailRoute]);
 
-const router = createRouter({ routeTree });
+const router = createRouter({
+  routeTree,
+  basepath: "/ian-greenough-developer-portfolio",
+});
 
 declare module "@tanstack/react-router" {
   interface Register {
